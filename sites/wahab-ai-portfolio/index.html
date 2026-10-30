@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WAHAB AI — Syed Abdul Wahab Bukhari | Full-Stack, AI &amp; Cybersecurity Developer</title>
+  <meta name="description" content="WAHAB AI — premium portfolio of Syed Abdul Wahab Bukhari: Full-Stack Developer, AI Developer and Cybersecurity Expert.">
+  <meta name="theme-color" content="#04060d">
+  <meta property="og:title" content="WAHAB AI — Syed Abdul Wahab Bukhari">
+  <meta property="og:description" content="Full-Stack Developer • AI Developer • Cybersecurity Expert">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/profile.jpg">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 2l12 7v14l-12 7L4 23V9z' fill='%2304060d' stroke='%2322e4ff' stroke-width='2'/%3E%3Cpath d='M9 11l3.5 10L16 14l3.5 7L23 11' fill='none' stroke='%23ff3ddb' stroke-width='2'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&family=Orbitron:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+
+  <script>document.documentElement.classList.add('js');</script>
+  <noscript><style>.loader{display:none!important}</style></noscript>
+</head>
+
+<body>
+  <!-- ============ BOOT LOADER ============ -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader-box">
+      <svg class="logo-mark logo-mark--lg" viewBox="0 0 32 32"><path d="M16 2l12 7v14l-12 7L4 23V9z"/><path d="M9 11l3.5 10L16 14l3.5 7L23 11"/></svg>
+      <p class="loader-text">INITIALIZING <span>WAHAB AI</span></p>
+      <div class="loader-bar"><i></i></div>
+    </div>
+  </div>
+
+  <div class="scroll-progress" aria-hidden="true"><span id="progress"></span></div>
+
+  <!-- ============ BACKGROUND FX ============ -->
+  <div class="bg" aria-hidden="true">
+    <div class="bg-grid"></div>
+    <div class="bg-glow bg-glow--a"></div>
+    <div class="bg-glow bg-glow--b"></div>
+    <div class="bg-glow bg-glow--c"></div>
+    <i class="bg-beam bg-beam--1"></i>
+    <i class="bg-beam bg-beam--2"></i>
+    <i class="bg-beam bg-beam--3"></i>
+    <i class="bg-beam bg-beam--v1"></i>
+    <i class="bg-beam bg-beam--v2"></i>
+    <canvas id="fx-code"></canvas>
+    <canvas id="fx-particles"></canvas>
+    <div class="bg-scan"></div>
+    <div class="bg-lines"></div>
+    <div class="bg-vignette"></div>
+  </div>
+
+  <!-- Custom cursor (desktop only) -->
+  <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+  <div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+
+  <!-- ============ FLOATING NAVBAR ============ -->
+  <header class="nav-wrap">
+    <nav class="nav glass" id="nav" aria-label="Main navigation">
+      <a href="#home" class="brand" aria-label="WAHAB AI — home">
+        <svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2l12 7v14l-12 7L4 23V9z"/><path d="M9 11l3.5 10L16 14l3.5 7L23 11"/></svg>
+        <span class="brand-text">WAHAB<b>AI</b></span>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="is-active">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#journey">Journey</a></li>
+        <li><a href="#wahab-ai">WAHAB AI</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <a href="#contact" class="nav-cta">Hire Me</a>
+
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <div class="mobile-menu-inner glass">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#journey">Journey</a></li>
+        <li><a href="#wahab-ai">WAHAB AI</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <ul class="social-row" data-social-list></ul>
+    </div>
+  </div>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section id="home" class="hero">
+      <div class="hero-code hero-code--l glass" aria-hidden="true">
+        <div class="hero-code-bar"><i></i><i></i><i></i><span>dev.js</span></div>
+<pre><span class="k">const</span> <span class="v">dev</span> = {
+  name: <span class="s">"Wahab"</span>,
+  stack: [<span class="s">"web"</span>, <span class="s">"ai"</span>, <span class="s">"sec"</span>],
+  mode: <span class="s">"build"</span>
+};
+<span class="v">dev</span>.<span class="f">ship</span>(<span class="s">secure</span>);</pre>
+      </div>
+
+      <div class="hero-code hero-code--r glass" aria-hidden="true">
+        <div class="hero-code-bar"><i></i><i></i><i></i><span>terminal</span></div>
+<pre><span class="d">$</span> ./harden --all
+<span class="d">&gt;</span> scanning ports...
+<span class="ok">[ OK ]</span> firewall hardened
+<span class="ok">[ OK ]</span> AI core online
+<span class="d">$</span> <span class="caret-inline"></span></pre>
+      </div>
+
+      <div class="container hero-inner">
+        <div class="status-chip">
+          <span class="dot"></span><span data-cfg="status">AVAILABLE FOR PROJECTS</span>
+        </div>
+
+        <!-- Profile with animated ring + scanning light -->
+        <div class="avatar" id="avatar">
+          <div class="avatar-ring avatar-ring--2"></div>
+          <div class="avatar-ring avatar-ring--1"></div>
+          <svg class="avatar-dashed" viewBox="0 0 200 200" aria-hidden="true"><circle cx="100" cy="100" r="97"/></svg>
+          <div class="avatar-orbit"><i></i></div>
+          <div class="avatar-orbit avatar-orbit--2"><i></i></div>
+          <div class="avatar-photo">
+            <img src="assets/profile.jpg" alt="Profile photo of Syed Abdul Wahab Bukhari" width="480" height="480" fetchpriority="high" data-cfg-src="profileImage">
+            <span class="avatar-scan"></span>
+            <span class="avatar-shine"></span>
+          </div>
+          <span class="hud hud--tl"></span><span class="hud hud--tr"></span>
+          <span class="hud hud--bl"></span><span class="hud hud--br"></span>
+        </div>
+
+        <p class="hero-eyebrow">// <span data-cfg="brand">WAHAB AI</span> // PORTFOLIO</p>
+
+        <h1 class="glitch" id="heroName" data-text="SYED ABDUL WAHAB BUKHARI" data-cfg="name">SYED ABDUL WAHAB BUKHARI</h1>
+
+        <p class="hero-roles" id="heroRoles">
+          <span>FULL-STACK DEVELOPER</span><span>AI DEVELOPER</span><span>CYBERSECURITY EXPERT</span>
+        </p>
+
+        <p class="hero-typing" aria-live="off"><span class="prompt">&gt;</span> <span id="typing"></span><span class="caret"></span></p>
+
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn--primary">EXPLORE MY WORK</a>
+          <a href="#contact" class="btn btn--ghost">CONTACT ME</a>
+        </div>
+
+        <ul class="social-row" data-social-list></ul>
+      </div>
+
+      <a href="#about" class="scroll-hint" aria-label="Scroll down"><span></span></a>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">// 01 · ABOUT</span>
+          <h2>About <em>Me</em></h2>
+          <p class="lead">Developer, builder and security-minded problem solver.</p>
+        </div>
+
+        <div class="about-grid">
+          <div class="reveal">
+            <div class="about-card glass tilt">
+              <div id="aboutText"></div>
+              <ul class="check-list" id="aboutHighlights"></ul>
+            </div>
+          </div>
+          <div class="reveal" style="--d:.12s">
+            <div class="terminal glass">
+              <div class="terminal-bar"><i></i><i></i><i></i><span>wahab@ai:~</span></div>
+              <pre class="terminal-body" id="terminal" aria-label="Terminal"></pre>
+            </div>
+          </div>
+        </div>
+
+        <div class="stats" id="stats"></div>
+      </div>
+    </section>
+
+    <!-- ============ SKILLS ============ -->
+    <section id="skills" class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">// 02 · SKILLS</span>
+          <h2>Tech <em>Arsenal</em></h2>
+          <p class="lead">The languages, tools and disciplines I use to build secure, intelligent products.</p>
+        </div>
+        <div class="skills-grid" id="skills-grid"></div>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">// 03 · PROJECTS</span>
+          <h2>Selected <em>Projects</em></h2>
+          <p class="lead">A few things I've built — web apps, AI platforms and bots.</p>
+        </div>
+        <div class="projects-grid" id="projects-grid"></div>
+      </div>
+    </section>
+
+    <!-- ============ SERVICES ============ -->
+    <section id="services" class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">// 04 · SERVICES</span>
+          <h2>What I <em>Offer</em></h2>
+          <p class="lead">End-to-end development with an AI-first, security-first approach.</p>
+        </div>
+        <div class="services-grid" id="services-grid"></div>
+      </div>
+    </section>
+
+    <!-- ============ JOURNEY ============ -->
+    <section id="journey" class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">// 05 · JOURNEY</span>
+          <h2>My Digital <em>Journey</em></h2>
+          <p class="lead">From the first line of code to building under one brand.</p>
+        </div>
+        <div class="timeline" id="timeline">
+          <div class="timeline-progress" id="timelineProgress"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WAHAB AI ============ -->
+    <section id="wahab-ai" class="section">
+      <div class="container">
+        <div class="ai-grid">
+          <div class="ai-copy reveal">
+            <span class="eyebrow">// 06 · THE BRAND</span>
+            <h2><em>WAHAB</em> AI</h2>
+            <p class="lead" id="aiText"></p>
+            <ul class="chip-list" id="aiFeatures"></ul>
+            <a href="#contact" class="btn btn--primary">START A PROJECT</a>
+          </div>
+
+          <div class="ai-visual reveal" style="--d:.15s">
+            <div class="ai-orb" aria-hidden="true">
+              <i class="o1"></i><i class="o2"></i><i class="o3"></i><span class="core"></span>
+            </div>
+            <div class="chat glass" id="chat">
+              <div class="chat-head">
+                <span class="chat-avatar"><svg class="logo-mark" viewBox="0 0 32 32"><path d="M16 2l12 7v14l-12 7L4 23V9z"/><path d="M9 11l3.5 10L16 14l3.5 7L23 11"/></svg></span>
+                <div><strong>WAHAB AI</strong><small><span class="dot"></span> online</small></div>
+              </div>
+              <div class="chat-body" id="chatBody"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">// 07 · CONTACT</span>
+          <h2>Let's <em>Connect</em></h2>
+          <p class="lead">Have a project, idea or security concern? Send a message — I reply fast.</p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-info reveal">
+            <a class="info-card glass tilt" id="cEmail" href="#"><span class="info-icon" data-icon="mail"></span><span><small>EMAIL</small><strong data-cfg="contact.email">your@email.com</strong></span></a>
+            <a class="info-card glass tilt" id="cWhatsapp" href="#" target="_blank" rel="noopener noreferrer"><span class="info-icon" data-icon="chat"></span><span><small>WHATSAPP</small><strong data-cfg="contact.phoneDisplay">+92 300 0000000</strong></span></a>
+            <div class="info-card glass tilt"><span class="info-icon" data-icon="pin"></span><span><small>LOCATION</small><strong data-cfg="contact.location">Pakistan</strong></span></div>
+            <ul class="social-row social-row--lg" data-social-list></ul>
+          </div>
+
+          <form class="contact-form glass reveal" id="contactForm" style="--d:.12s" novalidate>
+            <label for="fName">Your name</label>
+            <input id="fName" name="name" type="text" autocomplete="name" placeholder="Your name" required>
+
+            <label for="fEmail">Your email</label>
+            <input id="fEmail" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+
+            <label for="fMsg">Message</label>
+            <textarea id="fMsg" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+
+            <button type="submit" class="btn btn--primary btn--block">SEND MESSAGE <span class="btn-icon" data-icon="send"></span></button>
+            <p class="form-note" id="formNote" role="status"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer-inner glass">
+      <div class="footer-brand">
+        <a href="#home" class="brand"><svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2l12 7v14l-12 7L4 23V9z"/><path d="M9 11l3.5 10L16 14l3.5 7L23 11"/></svg><span class="brand-text">WAHAB<b>AI</b></span></a>
+        <p>Full-Stack • AI • Cybersecurity</p>
+      </div>
+      <ul class="footer-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <ul class="social-row" data-social-list></ul>
+      <p class="copyright">© <span id="year"></span> <span data-cfg="name">SYED ABDUL WAHAB BUKHARI</span> · All rights reserved.</p>
+    </div>
+  </footer>
+
+  <button class="to-top" id="toTop" aria-label="Back to top"><span data-icon="up"></span></button>
+
+  <script src="js/config.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
