@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APT313DB - Ultra Pro Max Lookup</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .mono-font {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .glass-card {
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glow-effect {
+            box-shadow: 0 0 50px -10px rgba(6, 182, 212, 0.25);
+        }
+        .card-glow:hover {
+            border-color: rgba(6, 182, 212, 0.4);
+            box-shadow: 0 0 30px -5px rgba(6, 182, 212, 0.15);
+        }
+        @keyframes pulse-slow {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.7; }
+        }
+        .animate-pulse-slow {
+            animation: pulse-slow 5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col justify-between relative overflow-x-hidden selection:bg-cyan-500 selection:text-white">
+
+    <!-- Background Cyberpunk Glow Orbs -->
+    <div class="absolute top-0 left-1/4 w-[500px] h-[500px] bg-cyan-600/10 rounded-full blur-[120px] pointer-events-none animate-pulse-slow"></div>
+    <div class="absolute bottom-10 right-1/4 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[120px] pointer-events-none animate-pulse-slow"></div>
+
+    <!-- Header Section -->
+    <header class="w-full py-5 px-6 sm:px-12 border-b border-slate-800/80 backdrop-blur-xl sticky top-0 z-50 flex justify-between items-center bg-slate-950/80">
+        <div class="flex items-center space-x-3">
+            <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-cyan-500 via-sky-500 to-blue-600 flex items-center justify-center shadow-lg shadow-cyan-500/30">
+                <i class="fa-solid fa-fingerprint text-white text-xl"></i>
+            </div>
+            <div>
+                <h1 class="text-xl font-black tracking-wider bg-gradient-to-r from-cyan-400 via-sky-300 to-blue-500 bg-clip-text text-transparent">APT313DB</h1>
+                <p class="text-[11px] text-slate-400 font-semibold uppercase tracking-widest">Secure Intelligence</p>
+            </div>
+        </div>
+        <div class="flex items-center space-x-3 bg-slate-900/90 border border-slate-800 px-4 py-2 rounded-full shadow-inner">
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping"></span>
+            <span class="text-xs text-slate-200 font-bold tracking-wide">Owner: <span class="text-cyan-400 font-extrabold tracking-wider">MR SILENT</span></span>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="flex-grow flex flex-col items-center px-4 py-12 z-10 w-full max-w-3xl mx-auto">
+        
+        <!-- Hero Title -->
+        <div class="text-center mb-10">
+            <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-semibold mb-3">
+                <i class="fa-solid fa-shield-halved"></i>
+                <span>Database Search Terminal v2.0</span>
+            </div>
+            <h2 class="text-3xl sm:text-5xl font-black tracking-tight mb-3 bg-gradient-to-r from-white via-slate-200 to-slate-400 bg-clip-text text-transparent">Advanced Number Lookup</h2>
+            <p class="text-slate-400 text-sm max-w-md mx-auto">Type phone number with <span class="text-cyan-400 font-mono">03...</span> or country code <span class="text-cyan-400 font-mono">92...</span> to fetch instant records.</p>
+        </div>
+
+        <!-- Search Box Card -->
+        <div class="glass-card rounded-2xl p-6 glow-effect w-full mb-8 border border-slate-800">
+            <div class="flex flex-col sm:flex-row gap-3">
+                <div class="relative flex-grow">
+                    <span class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-500">
+                        <i class="fa-solid fa-phone-volume text-cyan-500"></i>
+                    </span>
+                    <input type="text" id="phoneInput" placeholder="e.g. 03023336116 or 923023336116" 
+                        class="w-full pl-11 pr-4 py-4 bg-slate-900/90 border border-slate-700/80 rounded-xl text-slate-100 placeholder-slate-500 focus:outline-none focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 transition-all mono-font text-sm font-medium">
+                </div>
+                <button onclick="fetchData()" id="searchBtn" class="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-bold rounded-xl shadow-lg shadow-cyan-500/25 transition-all transform active:scale-[0.98] flex items-center justify-center space-x-2 cursor-pointer shrink-0">
+                    <i class="fa-solid fa-radar" id="searchIcon"></i>
+                    <span id="btnText">Execute Query</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Result Results Header info -->
+        <div id="resultsMeta" class="w-full hidden mb-4 flex justify-between items-center px-2">
+            <span class="text-xs uppercase tracking-widest text-slate-400 font-bold">Query Results Found: <span id="recordCount" class="text-cyan-400 font-mono">0</span></span>
+            <span class="text-xs font-mono text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-md border border-emerald-500/20">STATUS: SUCCESS</span>
+        </div>
+
+        <!-- Result Cards Container (Multiple / Single Cards) -->
+        <div id="resultContainer" class="w-full space-y-4">
+            <!-- Dynamic Cards injected here -->
+        </div>
+
+        <!-- Error / Empty State Box -->
+        <div id="messageBox" class="hidden w-full glass-card rounded-2xl p-6 text-center text-rose-400 border border-rose-500/30 text-sm">
+            <div class="w-12 h-12 rounded-full bg-rose-500/10 text-rose-400 flex items-center justify-center mx-auto mb-3 text-lg">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+            </div>
+            <p id="messageText" class="font-semibold text-slate-200">No records found or invalid query.</p>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full py-5 text-center text-xs text-slate-500 border-t border-slate-900/80 bg-slate-950/50">
+        APT313DB &bull; Designed & Developed by <span class="text-cyan-400 font-bold">MR SILENT</span>
+    </footer>
+
+    <!-- Script Logic -->
+    <script>
+        async function fetchData() {
+            let inputVal = document.getElementById('phoneInput').value.trim();
+            const resultContainer = document.getElementById('resultContainer');
+            const resultsMeta = document.getElementById('resultsMeta');
+            const messageBox = document.getElementById('messageBox');
+            const searchBtn = document.getElementById('searchBtn');
+            const searchIcon = document.getElementById('searchIcon');
+            const btnText = document.getElementById('btnText');
+
+            if (!inputVal) {
+                showError("Please enter a valid mobile number.");
+                return;
+            }
+
+            // Reset UI states
+            resultContainer.innerHTML = "";
+            resultsMeta.classList.add('hidden');
+            messageBox.classList.add('hidden');
+            searchBtn.disabled = true;
+            searchIcon.className = "fa-solid fa-spinner fa-spin";
+            btnText.innerText = "Searching Database...";
+
+            try {
+                const response = await fetch(`https://ft-simdb.ftshehryar10044.workers.dev/ft/api?num=${encodeURIComponent(inputVal)}`);
+                const data = await response.json();
+
+                if (data && data.status === "success" && data.records && data.records.length > 0) {
+                    renderRecords(data.records, data.count || data.records.length);
+                } else {
+                    showError("No database matches found for this query.");
+                }
+            } catch (err) {
+                showError("Network connection error or API endpoint timeout.");
+            } finally {
+                searchBtn.disabled = false;
+                searchIcon.className = "fa-solid fa-radar";
+                btnText.innerText = "Execute Query";
+            }
+        }
+
+        function renderRecords(records, count) {
+            const resultContainer = document.getElementById('resultContainer');
+            const resultsMeta = document.getElementById('resultsMeta');
+            const recordCountSpan = document.getElementById('recordCount');
+            
+            recordCountSpan.innerText = count;
+            resultsMeta.classList.remove('hidden');
+
+            let html = "";
+
+            records.forEach((rec, index) => {
+                html += `
+                    <div class="glass-card rounded-2xl p-6 card-glow transition-all duration-300 border border-slate-800/80 relative overflow-hidden">
+                        <!-- Top Index Badge -->
+                        <div class="absolute top-0 right-0 bg-gradient-to-l from-cyan-500/20 to-transparent px-4 py-1.5 rounded-bl-2xl border-l border-b border-cyan-500/20">
+                            <span class="text-[10px] font-mono font-bold text-cyan-400 uppercase tracking-widest">RECORD #${index + 1}</span>
+                        </div>
+
+                        <div class="space-y-4 pt-2">
+                            <!-- Name Field -->
+                            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center py-2.5 px-4 rounded-xl bg-slate-900/60 border border-slate-800/60">
+                                <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider flex items-center space-x-2">
+                                    <i class="fa-solid fa-user text-cyan-400 w-4"></i>
+                                    <span>Full Name</span>
+                                </span>
+                                <span class="text-sm font-bold text-white mt-1 sm:mt-0 tracking-wide">${rec.name || 'N/A'}</span>
+                            </div>
+
+                            <!-- Mobile & Network Row -->
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                <div class="flex flex-col justify-between py-2.5 px-4 rounded-xl bg-slate-900/60 border border-slate-800/60">
+                                    <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider flex items-center space-x-2 mb-1">
+                                        <i class="fa-solid fa-mobile-screen text-emerald-400 w-4"></i>
+                                        <span>Mobile Number</span>
+                                    </span>
+                                    <span class="text-sm font-bold text-emerald-400 mono-font tracking-wider">${rec.mobile || 'N/A'}</span>
+                                </div>
+                                <div class="flex flex-col justify-between py-2.5 px-4 rounded-xl bg-slate-900/60 border border-slate-800/60">
+                                    <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider flex items-center space-x-2 mb-1">
+                                        <i class="fa-solid fa-tower-broadcast text-sky-400 w-4"></i>
+                                        <span>Network Provider</span>
+                                    </span>
+                                    <span class="text-sm font-bold text-sky-300 tracking-wide">${rec.network || 'N/A'}</span>
+                                </div>
+                            </div>
+
+                            <!-- CNIC Field -->
+                            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center py-2.5 px-4 rounded-xl bg-slate-900/60 border border-slate-800/60">
+                                <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider flex items-center space-x-2">
+                                    <i class="fa-solid fa-id-card text-amber-400 w-4"></i>
+                                    <span>CNIC Number</span>
+                                </span>
+                                <span class="text-sm font-bold text-amber-300 mono-font tracking-widest mt-1 sm:mt-0">${rec.cnic || 'N/A'}</span>
+                            </div>
+
+                            <!-- Address Field -->
+                            <div class="flex flex-col py-2.5 px-4 rounded-xl bg-slate-900/60 border border-slate-800/60">
+                                <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider flex items-center space-x-2 mb-1">
+                                    <i class="fa-solid fa-location-dot text-rose-400 w-4"></i>
+                                    <span>Registered Address</span>
+                                </span>
+                                <span class="text-xs sm:text-sm font-medium text-slate-300 leading-relaxed">${rec.address || 'N/A'}</span>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+
+            resultContainer.innerHTML = html;
+        }
+
+        function showError(msg) {
+            const messageBox = document.getElementById('messageBox');
+            const messageText = document.getElementById('messageText');
+            messageText.innerText = msg;
+            messageBox.classList.remove('hidden');
+        }
+
+        // Trigger search on 'Enter' key
+        document.getElementById('phoneInput').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                fetchData();
+            }
+        });
+    </script>
+</body>
+</html>
